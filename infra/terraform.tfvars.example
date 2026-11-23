@@ -1,0 +1,33 @@
+# ============================================================================
+# 示例变量文件 - 复制到 terraform.tfvars 后按需修改
+# ============================================================================
+
+# 华为云区域（默认北京四）
+region = "cn-north-4"
+
+# code-server 版本
+vscode_server_version = "4.91.1"
+
+# ECS 规格（s6.2xlarge.2 通用计算增强型）
+ecs_flavor_id = "s6.2xlarge.2"
+
+# SSH 密钥对名称（可选，留空则自动创建并写入 code-server-keypair.pem）
+# 如使用已有密钥对，填入控制台中的名称
+# key_pair = "your-existing-keypair"
+
+# 是否自动创建密钥对（key_pair 为空时生效）
+create_keypair = true
+
+# CDN 加速域名（如已有备案域名可填，留空则跳过 CDN 创建）
+# 注意：mainland_china / global 要求域名已 ICP 备案
+cdn_domain_name = ""
+
+# 安全组入站允许网段（按实际需求设置）
+internet_cidr_block = "0.0.0.0/0"
+
+# 通用标签
+common_tags = {
+  Project     = "code-server"
+  Environment = "dev"
+  Owner       = "your-name"
+}
